@@ -1,6 +1,6 @@
 import client from '../utils/client';
 
-const endpoint = client.databaseIRL;
+const endpoint = client.databaseURL;
 
 const getEntries = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab.json`, {
@@ -36,18 +36,6 @@ const createEntry = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(Object.values(data)))
     .catch(reject);
 });
-  // FIXME: GET SINGLE AUTHOR
-// const getSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
-//   fetch(`${endpoint}/authors/${firebaseKey}.json`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     }
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(data))
-//     .catch(reject);
-// });
 
 const deleteSingleEntry = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
@@ -72,19 +60,6 @@ const updateEntry = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
-
-// TODO: GET A SINGLE AUTHOR'S BOOKS
-// const getAuthorBooks = () => new Promise((resolve, reject) => {
-//   fetch(`${endpoint}/authors.json?orderBy="favorite"&equalTo=true`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => resolve(Object.values(data)))
-//     .catch(reject);
-// }
 
 export {
   getEntries,
