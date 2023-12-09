@@ -6,18 +6,18 @@ const addEntryForm = () => {
   const domString = `
     <form id="submit-entry" class="mb-4">
       <div class="form-group">
-        <label for="image">First Name</label>
-        <input type="text" class="form-control" id="first_name" placeholder="First Name" required>
+        <label for="image">Title</label>
+        <input type="text" class="form-control" id="first-name" placeholder="Title" required>
       </div>
       <div class="form-group">
-        <label for="image">Last Name</label>
-        <input type="text" class="form-control" id="last_name" placeholder="Last Name" required>
+        <label for="image">Description</label>
+             <input type="text" class="form-control" id="last-name" placeholder="Description" required>
       </div>
       <div class="form-group">
-        <label for="title">Email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="Email" placeholder="Enter Email" required>
+        <label for="title">Language</label>
+        <input type="text" class="form-control" id="email" aria-describedby="Language" placeholder="Language" required>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit Author</button>
+      <button type="submit" class="btn btn-primary mt-3">Submit Entry</button>
     </form>`;
 
   renderToDOM('#form-container', domString);
